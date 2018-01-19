@@ -1,0 +1,11 @@
+<Project>
+    <PropertyGroup>
+        <Authors>achapman</Authors>
+        <Copyright>© Alistair Chapman 2017</Copyright>
+        <PackageTags>developengine;core;extensibility;id;</PackageTags>
+        <RepositoryUrl>https://github.com/DevelopEngine/IdEngine</RepositoryUrl>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <PackageLicenseUrl>https://raw.githubusercontent.com/DevelopEngine/IdEngine/master/LICENSE</PackageLicenseUrl>
+        <PackageProjectUrl>https://github.com/DevelopEngine/IdEngine</PackageProjectUrl>
+    </PropertyGroup>
+</Project>
