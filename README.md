@@ -2,10 +2,8 @@
 
 ## Part of **DevelopEngine**
 
-A reusable, highly opinionated drop-in component for loading, creating and managing app plugins or modules.
+A simple and reusable primitive for reliably unique identifiers usable in any application. IDs are implicitly convertible to `string`, `Guid`, and can even be created from file paths.
 
-Note that this package assumes use of the `Microsoft.Extensions.DependencyInjection` framework at this time.
+### IdEngine.Json
 
-### ModulEngine.Mvc
-
-This package provides additional types and extension methods specifically for using ModulEngine with ASP.NET Core, including simplified configuration and improved logging.
+This package provides a `Newtonsoft.Json.JsonConverter` implementation for the `IdEngine.Id` type, in case you have issues with (de)serializing, especially useful in ASP.NET Core apps.

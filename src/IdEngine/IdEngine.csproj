@@ -3,4 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
+  <PropertyGroup>
+    <PackageId>IdEngine</PackageId>
+    <Description>A simple and reusable primitive for reliably unique identifiers usable in any application.</Description>
+  </PropertyGroup>
 </Project>

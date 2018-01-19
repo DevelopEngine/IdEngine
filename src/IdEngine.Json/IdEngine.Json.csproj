@@ -3,6 +3,10 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
+  <PropertyGroup>
+    <PackageId>IdEngine.Json</PackageId>
+    <Description>This package provides a `Newtonsoft.Json.JsonConverter` implementation for the `IdEngine.Id` type.</Description>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
   </ItemGroup>
