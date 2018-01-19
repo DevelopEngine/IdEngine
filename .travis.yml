@@ -4,15 +4,17 @@ dotnet: 2.1.4
 before_install:
   - |
       if [ "$TRAVIS_BRANCH" -eq "master" ] || [ "$TRAVIS_BRANCH" -eq "develop" ] && [ "$TRAVIS_PULL_REQUEST" -eq "false" ] ; then
+        echo "De-prefixing environment variables!"
         for prefixed_envvar in ${!PUBLISH_*}; do
           eval export ${prefixed_envvar#PUBLISH_}="${!prefixed_envvar}"
         done
       fi
+  - env
 #install:
 #  - nuget restore tools/packages.config
 #  - nuget restore tools/Modules/packages.config
 script:
-  - ./build.sh -target="NuGet" -publish="true"
+  - ./build.sh -target="CI" -publish="true"
 cache:
   directories:
     - .packages
