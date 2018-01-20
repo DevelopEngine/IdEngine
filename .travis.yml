@@ -1,18 +1,10 @@
 language: csharp
 mono: 5.4.1
 dotnet: 2.1.4
-before_install:
-  - |
-      if [ "$TRAVIS_BRANCH" -eq "master" ] || [ "$TRAVIS_BRANCH" -eq "develop" ] && [ "$TRAVIS_PULL_REQUEST" -eq "false" ] ; then
-        for prefixed_envvar in ${!PUBLISH_*}; do
-          eval export ${prefixed_envvar#PUBLISH_}="${!prefixed_envvar}"
-        done
-      fi
-#install:
-#  - nuget restore tools/packages.config
-#  - nuget restore tools/Modules/packages.config
+before_script:
+  - publish=$(([[ "$TRAVIS_BRANCH" = "master" ]] || [[ "$TRAVIS_BRANCH" = "develop" ]] && [[ "$TRAVIS_PULL_REQUEST" = "false" ]]) && echo true || echo false)
 script:
-  - ./build.sh -target="NuGet" -publish="true"
+  - ./build.sh -target="CI" -publish="$publish"
 cache:
   directories:
     - .packages
