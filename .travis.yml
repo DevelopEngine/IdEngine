@@ -1,14 +1,9 @@
 language: csharp
 mono: 5.4.1
 dotnet: 2.1.4
-#install:
-#  - nuget restore tools/packages.config
-#  - nuget restore tools/Modules/packages.config
 before_script:
-  - echo 'export publish=$(([[ "$TRAVIS_BRANCH" = "master" ]] || [[ "$TRAVIS_BRANCH" = "develop" ]] && [[ "$TRAVIS_PULL_REQUEST" = "false" ]]) && echo true || echo false)' > publish.sh
-  - source publish.sh
+  - publish=$(([[ "$TRAVIS_BRANCH" = "master" ]] || [[ "$TRAVIS_BRANCH" = "develop" ]] && [[ "$TRAVIS_PULL_REQUEST" = "false" ]]) && echo true || echo false)
 script:
-  - env
   - ./build.sh -target="CI" -publish="$publish"
 cache:
   directories:
